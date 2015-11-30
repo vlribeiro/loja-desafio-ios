@@ -28,7 +28,7 @@ class LojaApi : NSObject {
         connection.start()
     }
     
-    func postDataForPath(resourcePath: String, data: Dictionary<String,String>) {
+    func postDataForPath(resourcePath: String, data: Dictionary<String,Any>) {
         let urlPath = "\(LojaApi.serverUrl)\(resourcePath)"
         let url : NSURL! = NSURL(string: urlPath)
         

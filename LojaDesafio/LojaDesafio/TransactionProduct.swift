@@ -27,4 +27,15 @@ class TransactionProduct {
         self.productId = productId
         self.quantity = quantity
     }
+    
+    func getDictionaryData() -> Dictionary<String,Any> {
+        var creditCardData = Dictionary<String,Any>()
+        
+        creditCardData["Id"] = self.id
+        creditCardData["TransactionId"] = self.transactionId
+        creditCardData["ProductId"] = self.productId
+        creditCardData["Quantity"] = self.quantity
+        
+        return creditCardData
+    }
 }

@@ -25,6 +25,7 @@ class Product {
     
     init(id : Int, name : String, description : String, price : Float, imageUrl : String) {
         self.id = id
+        self.name = name
         self.description = description
         self.price = price
         self.imageUrl = imageUrl

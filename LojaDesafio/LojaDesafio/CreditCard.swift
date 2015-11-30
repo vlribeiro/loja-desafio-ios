@@ -36,4 +36,18 @@ class CreditCard {
         self.cardIssuer = cardIssuer
         self.csc = csc
     }
+    
+    func getDictionaryData() -> Dictionary<String,Any> {
+        var creditCardData = Dictionary<String,Any>()
+        
+        creditCardData["Id"] = self.id
+        creditCardData["Cardholder"] = self.cardholder
+        creditCardData["Number"] = self.number
+        creditCardData["ExpirationMonth"] = self.expirationMonth
+        creditCardData["ExpirationYear"] = self.expirationYear
+        creditCardData["CardIssuer"] = self.cardIssuer
+        creditCardData["CSC"] = self.csc
+        
+        return creditCardData
+    }
 }

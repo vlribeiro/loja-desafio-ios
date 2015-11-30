@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Realm
 
 class Transaction {
     var id : Int
@@ -29,5 +30,22 @@ class Transaction {
         self.creditCardId = creditCardId
         self.value = value
         self.transactionProducts = transactionProducts
+    }
+    
+    func getDictionaryData() -> Dictionary<String,Any> {
+        var transactionData = Dictionary<String,Any>()
+        
+        transactionData["CreditCardId"] = self.creditCardId
+        transactionData["Value"] = self.value
+        transactionData["CreditCard"] = self.creditCard.getDictionaryData()
+        var transctionProductsArray = Array<Dictionary<String,Any>>()
+        
+        for transactionProduct in self.transactionProducts {
+            transctionProductsArray.append(transactionProduct.getDictionaryData())
+        }
+        
+        transactionData["TransactionProducts"] = transctionProductsArray
+        
+        return transactionData
     }
 }

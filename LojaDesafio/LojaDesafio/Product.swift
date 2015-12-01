@@ -7,27 +7,36 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Product {
-    var id : Int
-    var name : String
-    var description : String
-    var price : Float
-    var imageUrl : String
+class Product : Object {
+    dynamic var id : Int
+    dynamic var name : String
+    dynamic var productDescription : String
+    dynamic var price : Float
+    dynamic var imageUrl : String
     
-    init() {
+    required init() {
         self.id = 0
         self.name = String()
-        self.description = String()
+        self.productDescription = String()
         self.price = 0
         self.imageUrl = String()
+        
+        super.init()
     }
     
     init(id : Int, name : String, description : String, price : Float, imageUrl : String) {
         self.id = id
         self.name = name
-        self.description = description
+        self.productDescription = description
         self.price = price
         self.imageUrl = imageUrl
+        
+        super.init()
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

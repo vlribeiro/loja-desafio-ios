@@ -7,25 +7,30 @@
 //
 
 import Foundation
+import RealmSwift
 
-class TransactionProduct {
-    var id : Int
-    var transactionId : Int
-    var productId : Int
-    var quantity : Int
-    
-    init() {
-        self.id = 0
-        self.transactionId = 0
-        self.productId = 0
-        self.quantity = 0
-    }
+class TransactionProduct : Object {
+    dynamic var id : Int
+    dynamic var transactionId : Int
+    dynamic var productId : Int
+    dynamic var quantity : Int
     
     init(id : Int, transactionId : Int, productId : Int, quantity : Int) {
         self.id = id
         self.transactionId = transactionId
         self.productId = productId
         self.quantity = quantity
+        
+        super.init()
+    }
+
+    required init() {
+        self.id = 0
+        self.transactionId = 0
+        self.productId = 0
+        self.quantity = 0
+        
+        super.init()
     }
     
     func getDictionaryData() -> Dictionary<String,Any> {
@@ -37,5 +42,9 @@ class TransactionProduct {
         creditCardData["Quantity"] = self.quantity
         
         return creditCardData
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

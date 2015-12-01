@@ -7,25 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class CreditCard {
-    var id : Int
-    var cardholder : String
-    var number : String
-    var expirationMonth : Int
-    var expirationYear : Int
-    var cardIssuer : Int
-    var csc : String
-    
-    init() {
-        self.id = 0
-        self.cardholder = String()
-        self.number = String()
-        self.expirationMonth = 0
-        self.expirationYear = 0
-        self.cardIssuer = 0
-        self.csc = String()
-    }
+class CreditCard : Object {
+    dynamic var id : Int
+    dynamic var cardholder : String
+    dynamic var number : String
+    dynamic var expirationMonth : Int
+    dynamic var expirationYear : Int
+    dynamic var cardIssuer : Int
+    dynamic var csc : String
     
     init(id: Int, cardholder : String, number : String, expirationMonth : Int, expirationYear : Int, cardIssuer : Int, csc : String) {
         self.id = id
@@ -35,6 +26,20 @@ class CreditCard {
         self.expirationYear = expirationYear
         self.cardIssuer = cardIssuer
         self.csc = csc
+        
+        super.init()
+    }
+
+    required init() {
+        self.id = 0
+        self.cardholder = String()
+        self.number = String()
+        self.expirationMonth = 0
+        self.expirationYear = 0
+        self.cardIssuer = 0
+        self.csc = String()
+        
+        super.init()
     }
     
     func getDictionaryData() -> Dictionary<String,Any> {
@@ -49,5 +54,9 @@ class CreditCard {
         creditCardData["CSC"] = self.csc
         
         return creditCardData
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

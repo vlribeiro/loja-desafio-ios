@@ -7,13 +7,21 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
 class TransactionData {
+    
     class func insertOrUpdate(transaction: Transaction) {
-        //let realm = try! Realm()
+        let realm = try! Realm()
         
-        //var realm.objects(Transaction)
+        try! realm.write({
+            realm.add(transaction, update: true)
+        })
+    }
+    
+    class func fetchActive() -> Transaction? {
+        let realm = try! Realm()
         
+        return realm.objects(Transaction).first
     }
 }

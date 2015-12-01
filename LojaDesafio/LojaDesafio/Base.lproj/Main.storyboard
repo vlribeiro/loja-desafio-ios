@@ -561,8 +561,8 @@
                                     <constraint firstAttribute="width" secondItem="VcU-N3-kBz" secondAttribute="height" multiplier="16:9" id="E6k-YW-mTr"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pmO-Au-fKc">
-                                <rect key="frame" x="20" y="449" width="560" height="101"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pmO-Au-fKc">
+                                <rect key="frame" x="20" y="489" width="560" height="62"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -573,7 +573,7 @@
                                 <rect key="frame" x="0.0" y="401" width="600" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G69-O8-xBt">
-                                        <rect key="frame" x="276" y="8.5" width="50" height="23"/>
+                                        <rect key="frame" x="275.5" y="8.5" width="49.5" height="23"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -588,20 +588,54 @@
                                     <constraint firstItem="G69-O8-xBt" firstAttribute="centerX" secondItem="Wcr-uM-Mwh" secondAttribute="centerX" id="tNF-X0-pm4"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANu-PQ-cLC">
+                                <rect key="frame" x="0.0" y="441" width="600" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-5V-sW7">
+                                        <rect key="frame" x="203" y="2" width="194" height="36"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Adicionar ao Carrinho">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addToCart:" destination="Y0W-4o-Jj9" eventType="touchUpInside" id="gBH-Sq-DRe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.41460518756929499" green="0.11666096673109549" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gPw-5V-sW7" firstAttribute="leading" secondItem="ANu-PQ-cLC" secondAttribute="leading" constant="203" id="M4v-3p-Vo8"/>
+                                    <constraint firstAttribute="trailing" secondItem="gPw-5V-sW7" secondAttribute="trailing" constant="203" id="Mg6-hv-9fI"/>
+                                    <constraint firstItem="gPw-5V-sW7" firstAttribute="centerY" secondItem="ANu-PQ-cLC" secondAttribute="centerY" id="brq-4Y-WCm"/>
+                                    <constraint firstAttribute="height" constant="40" id="pkb-gv-KBz"/>
+                                    <constraint firstItem="gPw-5V-sW7" firstAttribute="centerX" secondItem="ANu-PQ-cLC" secondAttribute="centerX" id="uog-SE-bff"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uog-SE-bff"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wcr-uM-Mwh" firstAttribute="top" secondItem="VcU-N3-kBz" secondAttribute="bottom" id="0jw-iL-kzo"/>
+                            <constraint firstItem="ANu-PQ-cLC" firstAttribute="top" secondItem="Wcr-uM-Mwh" secondAttribute="bottom" id="1BU-dB-bcO"/>
                             <constraint firstItem="pmO-Au-fKc" firstAttribute="top" secondItem="Wcr-uM-Mwh" secondAttribute="bottom" constant="8" id="1RQ-IR-Nzg"/>
                             <constraint firstItem="VcU-N3-kBz" firstAttribute="top" secondItem="Qj3-TW-vLD" secondAttribute="bottom" id="3FU-In-2PW"/>
                             <constraint firstItem="Qj3-TW-vLD" firstAttribute="top" secondItem="0LM-I7-Q4K" secondAttribute="bottom" id="AJR-Kt-HyP"/>
                             <constraint firstItem="pmO-Au-fKc" firstAttribute="leading" secondItem="xLC-ug-Y2k" secondAttribute="leadingMargin" id="MmV-fn-3J1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VcU-N3-kBz" secondAttribute="trailing" constant="-20" id="OYY-cu-zeH"/>
+                            <constraint firstItem="ANu-PQ-cLC" firstAttribute="leading" secondItem="Wcr-uM-Mwh" secondAttribute="leading" id="RVc-mm-J41"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pmO-Au-fKc" secondAttribute="trailing" id="UdS-YC-BZ6"/>
                             <constraint firstItem="Qj3-TW-vLD" firstAttribute="leading" secondItem="xLC-ug-Y2k" secondAttribute="leadingMargin" constant="-20" id="arg-zW-ZTa"/>
                             <constraint firstItem="BWs-mh-9AS" firstAttribute="top" secondItem="pmO-Au-fKc" secondAttribute="bottom" id="bdV-QN-Nho"/>
+                            <constraint firstItem="pmO-Au-fKc" firstAttribute="top" secondItem="ANu-PQ-cLC" secondAttribute="bottom" constant="8" id="f2R-Xa-Wg4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qj3-TW-vLD" secondAttribute="trailing" constant="-20" id="guI-17-fmv"/>
+                            <constraint firstItem="ANu-PQ-cLC" firstAttribute="trailing" secondItem="Wcr-uM-Mwh" secondAttribute="trailing" id="j6P-0Z-aVO"/>
                             <constraint firstItem="Wcr-uM-Mwh" firstAttribute="trailing" secondItem="VcU-N3-kBz" secondAttribute="trailing" id="ksg-9c-wws"/>
                             <constraint firstItem="VcU-N3-kBz" firstAttribute="leading" secondItem="xLC-ug-Y2k" secondAttribute="leadingMargin" constant="-20" id="qmx-Dm-WS4"/>
                             <constraint firstItem="pmO-Au-fKc" firstAttribute="top" secondItem="VcU-N3-kBz" secondAttribute="bottom" constant="16" id="wHu-5K-pOP"/>
@@ -609,6 +643,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="1RQ-IR-Nzg"/>
                                 <exclude reference="wHu-5K-pOP"/>
                             </mask>
                         </variation>

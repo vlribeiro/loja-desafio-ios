@@ -35,6 +35,10 @@ class ProductDetailViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func addToCart(sender: UIButton) {
+        TransactionBusiness.addProduct(self.product)
+    }
+    
     func setSelectedProduct(product: Product) {
         self.product = product
     }

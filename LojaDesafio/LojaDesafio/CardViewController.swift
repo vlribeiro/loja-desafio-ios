@@ -33,16 +33,34 @@ class CadrViewController : UIViewController, TransactionBusinessProtocol {
         
         let cardIssuer = visaToggle.on ? 1 : (mastercardToggle.on ? 2 : 0)
         
-        
-        
-        let creditCard = CreditCard(id: 0, cardholder: cardholderText.text!, number: cardNumberText.text!, expirationMonth: Int(expirationMonthText.text!)!, expirationYear: Int(expirationYearText.text!)!, cardIssuer: cardIssuer, csc: cscText.text!)
-        
-        self.transactionBusiness = TransactionBusiness(delegate: self)
-        
-        transactionBusiness?.save(transaction, creditCard: creditCard)
+        if (validate()) {
+            let creditCard = CreditCard(id: 0, cardholder: cardholderText.text!, number: cardNumberText.text!, expirationMonth: Int(expirationMonthText.text!)!, expirationYear: Int(expirationYearText.text!)!, cardIssuer: cardIssuer, csc: cscText.text!)
+            
+            self.transactionBusiness = TransactionBusiness(delegate: self)
+            
+            transactionBusiness?.save(transaction, creditCard: creditCard)
+        }
     }
     
     func didSaveTransaction(transaction:Transaction) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func validate() -> Bool {
+        if cardholderText.text != nil && cardNumberText.text != nil && expirationMonthText.text != nil && Int(expirationMonthText.text!) != nil && expirationYearText.text != nil && Int(expirationYearText.text!) != nil && cscText.text != nil
+        {
+            return true
+        }
+        else {
+            let alert = UIAlertController(title: "Atenção!", message: "Verifique os dados digitados", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            return false
+        }
     }
 }

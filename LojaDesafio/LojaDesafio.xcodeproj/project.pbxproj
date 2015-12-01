@@ -13,6 +13,7 @@
 		818FD1821C0D23C800A6B77C /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FD1811C0D23C800A6B77C /* ProductTableViewCell.swift */; };
 		818FD1841C0D37FC00A6B77C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */; };
 		8190E9621C0D5DD3003F4F8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */; };
+		8190E9641C0D747E003F4F8D /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190E9631C0D747E003F4F8D /* CardViewController.swift */; };
 		81C257A41C0B9861007DFB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C257A31C0B9861007DFB6C /* AppDelegate.swift */; };
 		81C257A61C0B9861007DFB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C257A51C0B9861007DFB6C /* ViewController.swift */; };
 		81C257A91C0B9861007DFB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C257A71C0B9861007DFB6C /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		818FD1811C0D23C800A6B77C /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		8190E9631C0D747E003F4F8D /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		81C257A01C0B9861007DFB6C /* LojaDesafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LojaDesafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C257A31C0B9861007DFB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81C257A51C0B9861007DFB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */,
 				8148DEFA1C0D5867002502F9 /* CartTableViewController.swift */,
 				8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */,
+				8190E9631C0D747E003F4F8D /* CardViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				818FD1841C0D37FC00A6B77C /* ProductDetailViewController.swift in Sources */,
 				81C257C41C0BAA62007DFB6C /* TransactionProduct.swift in Sources */,
 				81C257A61C0B9861007DFB6C /* ViewController.swift in Sources */,
+				8190E9641C0D747E003F4F8D /* CardViewController.swift in Sources */,
 				818FD1821C0D23C800A6B77C /* ProductTableViewCell.swift in Sources */,
 				81C257DE1C0D0F88007DFB6C /* TransactionApi.swift in Sources */,
 				81C257DC1C0D0F64007DFB6C /* TransactionBusiness.swift in Sources */,

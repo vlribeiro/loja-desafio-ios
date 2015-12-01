@@ -9,5 +9,7 @@
 import Foundation
 
 class TransactionProductBusiness {
-    
+    class func delete(transactionProduct: TransactionProduct) {
+        TransactionProductData.delete(transactionProduct)
+    }
 }

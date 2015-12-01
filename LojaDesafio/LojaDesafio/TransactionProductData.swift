@@ -52,4 +52,12 @@ class TransactionProductData {
             return 1
         }
     }
+    
+    class func delete(transactionProduct: TransactionProduct) {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            realm.delete(transactionProduct)
+        })
+    }
 }

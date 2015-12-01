@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TransactionBusiness {
+class TransactionBusiness: TransactionApiProtocol {
     var delegate : TransactionBusinessProtocol
     
     init(delegate: TransactionBusinessProtocol) {
@@ -30,8 +30,28 @@ class TransactionBusiness {
             TransactionData.addTransactionProduct(TransactionProduct(id: TransactionProductData.nextId(), transactionId: transaction.id, productId: product.id, quantity: 1), toTransaction: transaction)
         }
     }
+    
+    class func delete(transaction: Transaction) {
+        TransactionData.delete(transaction)
+        
+        NSLog("Transação concluída.")
+    }
+    
+    func save(transaction: Transaction, creditCard: CreditCard) {
+        //var transactionApi = TransactionApi(delegate: self)
+        
+        //transactionApi.saveTransaction(transaction)
+        
+        TransactionBusiness.delete(transaction)
+        
+        self.didPost(transaction)
+    }
+    
+    func didPost(transaction: Transaction) {
+        self.delegate.didSaveTransaction(transaction)
+    }
 }
 
 protocol TransactionBusinessProtocol {
-    //will be used for post
+    func didSaveTransaction(transaction:Transaction)
 }

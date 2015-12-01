@@ -30,6 +30,10 @@ class CartTableViewController: UITableViewController, CartTableViewCellProtocol 
         self.cartTableView.reloadData()
     }
     
+    func updateTableView() {
+        self.cartTableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -21,6 +21,18 @@ class TransactionData {
         return transaction
     }
     
+    class func insertOrUpdate(transaction: Transaction, withCreditCard creditCard: CreditCard) -> Transaction {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            transaction.creditCard = creditCard
+            
+            realm.add(transaction, update: true)
+        })
+        
+        return transaction
+    }
+    
     class func fetchActive() -> Transaction {
         let realm = try! Realm()
         
@@ -49,5 +61,13 @@ class TransactionData {
         })
         
         NSLog("Adicionando \(transactionProduct) na transação")
+    }
+    
+    class func delete(transaction: Transaction) {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            realm.delete(transaction)
+        })
     }
 }

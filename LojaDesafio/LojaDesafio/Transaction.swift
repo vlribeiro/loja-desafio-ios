@@ -11,15 +11,13 @@ import RealmSwift
 
 class Transaction : Object {
     dynamic var id : Int
-    dynamic var creditCardId : Int
-    dynamic var creditCard : CreditCard
+    let creditCard : CreditCard
     dynamic var value : Float
     let transactionProducts : List<TransactionProduct>
     
     init(id : Int, creditCard : CreditCard, creditCardId : Int, value : Float, transactionProducts : List<TransactionProduct>) {
         self.id = id
         self.creditCard = creditCard
-        self.creditCardId = creditCardId
         self.value = value
         self.transactionProducts = transactionProducts
         
@@ -29,7 +27,6 @@ class Transaction : Object {
     required init() {
         self.id = 0
         self.creditCard = CreditCard()
-        self.creditCardId = 0
         self.value = 0
         self.transactionProducts = List<TransactionProduct>()
         
@@ -39,7 +36,7 @@ class Transaction : Object {
     func getDictionaryData() -> Dictionary<String,Any> {
         var transactionData = Dictionary<String,Any>()
         
-        transactionData["CreditCardId"] = self.creditCardId
+        transactionData["CreditCardId"] = self.creditCard.id
         transactionData["Value"] = self.value
         transactionData["CreditCard"] = self.creditCard.getDictionaryData()
         var transctionProductsArray = Array<Dictionary<String,Any>>()

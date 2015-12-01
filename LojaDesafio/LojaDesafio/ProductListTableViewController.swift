@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductListTableViewController: UITableViewController, ProductBusinessProtocol {
+class ProductListTableViewController: UITableViewController, ProductBusinessProtocol, ProductListTableCellProtocol {
     var products = Array<Product>()
     
     @IBOutlet var productTableView: UITableView!
@@ -18,7 +18,7 @@ class ProductListTableViewController: UITableViewController, ProductBusinessProt
         
         let productBusiness = ProductBusiness(delegate: self)
         
-        productBusiness.fetchAll(true)
+        productBusiness.fetchAll(false)
     }
     
     func didFinishFetch(products: Array<Product>) {
@@ -42,14 +42,32 @@ class ProductListTableViewController: UITableViewController, ProductBusinessProt
         
         let product = self.products[indexPath.row]
         
-        cell.setProduct(product)
+        cell.setProduct(product, index: indexPath.row, delegate: self)
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("ListDetailSegue", sender: indexPath.row)
+        self.performSegueWithIdentifier("ProductDetailSegue", sender: indexPath.row)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ProductDetailSegue" {
+            let product = self.products[(sender as! Int)]
+            
+            (segue.destinationViewController as! ProductDetailViewController).setSelectedProduct(product)
+        }
+    }
+    
+    func callForSegue(index: Int) {
+        self.performSegueWithIdentifier("ProductDetailSegue", sender: index)
     }
 
 }

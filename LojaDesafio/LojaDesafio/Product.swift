@@ -39,4 +39,8 @@ class Product : Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    override var description : String {
+        return "Produto -> { id: \(self.id), nome: \(self.name) }"
+    }
 }

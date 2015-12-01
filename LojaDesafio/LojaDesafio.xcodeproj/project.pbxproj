@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		818FD17E1C0D215200A6B77C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FD17D1C0D215200A6B77C /* CartViewController.swift */; };
+		8148DEF71C0D4B52002502F9 /* TransactionProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8148DEF61C0D4B52002502F9 /* TransactionProductData.swift */; };
+		8148DEF91C0D4BB4002502F9 /* TransactionProductBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8148DEF81C0D4BB4002502F9 /* TransactionProductBusiness.swift */; };
+		8148DEFB1C0D5867002502F9 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8148DEFA1C0D5867002502F9 /* CartTableViewController.swift */; };
 		818FD1821C0D23C800A6B77C /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FD1811C0D23C800A6B77C /* ProductTableViewCell.swift */; };
+		818FD1841C0D37FC00A6B77C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */; };
+		8190E9621C0D5DD3003F4F8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */; };
 		81C257A41C0B9861007DFB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C257A31C0B9861007DFB6C /* AppDelegate.swift */; };
 		81C257A61C0B9861007DFB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C257A51C0B9861007DFB6C /* ViewController.swift */; };
 		81C257A91C0B9861007DFB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81C257A71C0B9861007DFB6C /* Main.storyboard */; };
@@ -49,8 +53,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		818FD17D1C0D215200A6B77C /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		8148DEF61C0D4B52002502F9 /* TransactionProductData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionProductData.swift; sourceTree = "<group>"; };
+		8148DEF81C0D4BB4002502F9 /* TransactionProductBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionProductBusiness.swift; sourceTree = "<group>"; };
+		8148DEFA1C0D5867002502F9 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
 		818FD1811C0D23C800A6B77C /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		81C257A01C0B9861007DFB6C /* LojaDesafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LojaDesafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C257A31C0B9861007DFB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81C257A51C0B9861007DFB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,8 +158,10 @@
 			children = (
 				81C257C91C0CFF05007DFB6C /* ProductListTableViewController.swift */,
 				81C257D31C0D0A6C007DFB6C /* LoadingViewController.swift */,
-				818FD17D1C0D215200A6B77C /* CartViewController.swift */,
 				818FD1811C0D23C800A6B77C /* ProductTableViewCell.swift */,
+				818FD1831C0D37FC00A6B77C /* ProductDetailViewController.swift */,
+				8148DEFA1C0D5867002502F9 /* CartTableViewController.swift */,
+				8190E9611C0D5DD3003F4F8D /* CartTableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +171,7 @@
 			children = (
 				81C257D61C0D0B14007DFB6C /* ProductData.swift */,
 				81C257DF1C0D14CB007DFB6C /* TransactionData.swift */,
+				8148DEF61C0D4B52002502F9 /* TransactionProductData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 			children = (
 				81C257D91C0D0BAE007DFB6C /* ProductBusiness.swift */,
 				81C257DB1C0D0F64007DFB6C /* TransactionBusiness.swift */,
+				8148DEF81C0D4BB4002502F9 /* TransactionProductBusiness.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -264,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8190E9621C0D5DD3003F4F8D /* CartTableViewCell.swift in Sources */,
+				8148DEF91C0D4BB4002502F9 /* TransactionProductBusiness.swift in Sources */,
 				81C257C21C0BA609007DFB6C /* Transaction.swift in Sources */,
 				81C257D71C0D0B14007DFB6C /* ProductData.swift in Sources */,
 				81C257C01C0BA579007DFB6C /* CreditCard.swift in Sources */,
+				818FD1841C0D37FC00A6B77C /* ProductDetailViewController.swift in Sources */,
 				81C257C41C0BAA62007DFB6C /* TransactionProduct.swift in Sources */,
 				81C257A61C0B9861007DFB6C /* ViewController.swift in Sources */,
 				818FD1821C0D23C800A6B77C /* ProductTableViewCell.swift in Sources */,
@@ -275,9 +290,10 @@
 				81C257DA1C0D0BAE007DFB6C /* ProductBusiness.swift in Sources */,
 				81C257B91C0B9BB5007DFB6C /* LojaApi.swift in Sources */,
 				81C257CA1C0CFF05007DFB6C /* ProductListTableViewController.swift in Sources */,
+				8148DEF71C0D4B52002502F9 /* TransactionProductData.swift in Sources */,
+				8148DEFB1C0D5867002502F9 /* CartTableViewController.swift in Sources */,
 				81C257E01C0D14CB007DFB6C /* TransactionData.swift in Sources */,
 				81C257BE1C0BA45B007DFB6C /* Product.swift in Sources */,
-				818FD17E1C0D215200A6B77C /* CartViewController.swift in Sources */,
 				81C257D41C0D0A6C007DFB6C /* LoadingViewController.swift in Sources */,
 				81C257BB1C0BA3E4007DFB6C /* ProductApi.swift in Sources */,
 				81C257A41C0B9861007DFB6C /* AppDelegate.swift in Sources */,

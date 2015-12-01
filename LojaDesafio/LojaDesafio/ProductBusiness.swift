@@ -26,7 +26,13 @@ class ProductBusiness: ProductApiProtocol {
         }
     }
     
+    class func fetchById(productId: Int) -> Product {
+        return ProductData.fetchById(productId)
+    }
+    
     func didReceiveResponse(products: Array<Product>) {
+        ProductData.refresh(products)
+        
         delegate?.didFinishFetch(products)
     }
 }

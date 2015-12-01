@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CreditCard : Object, RealmOptionalType {
+class CreditCard : Object {
     dynamic var id : Int
     dynamic var cardholder : String
     dynamic var number : String

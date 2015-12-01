@@ -10,36 +10,37 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
+    var delegate : ProductListTableCellProtocol?
+    var product : Product?
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productValue: UILabel!
+    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var viewDetailButton: UIButton!
     
     @IBAction func viewDetail(sender: UIButton) {
-        
+        self.delegate?.callForSegue(sender.tag)
     }
     
-    @IBAction func addToCart(sender: UIButton) {
-        
+    @IBAction func addToCart(sender: UIButton) {        
+        TransactionProductBusiness.addProduct(self.product!)
     }
     
-    func setProduct(product: Product) {
+    func setProduct(product: Product, index: Int, delegate: ProductListTableCellProtocol) {
+        self.product = product
+        
         self.productName.text = product.name
         self.productValue.text = String(format: "%.2f", product.price)
+        self.addToCartButton.tag = index
+        self.viewDetailButton.tag = index
+        
+        self.delegate = delegate
         
         productImage.imageFromUrl(product.imageUrl)
     }
 }
 
-extension UIImageView {
-    public func imageFromUrl(urlString: String) {
-        if let url = NSURL(string: urlString) {
-            let request = NSURLRequest(URL: url)
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-                if let imageData = data as NSData? {
-                    self.image = UIImage(data: imageData)
-                }
-            }
-        }
-    }
+protocol ProductListTableCellProtocol {
+    func callForSegue(index: Int)
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ProductData {
     
@@ -14,9 +15,31 @@ class ProductData {
     class func fetchAll() -> Array<Product> {
         var result = Array<Product>()
         
-        result.append(Product(id: 1, name: "iPhone 6S Plus 16 GB", description: "Novo iPhone 6S Plus 16GB de armazenamento. Cor: Prata.", price: 3999, imageUrl: "http://novo2015.com.br/wp-content/uploads/2015/06/iphone-6-2.jpg"))
-        result.append(Product(id: 1, name: "iPhone 6S Plus 64 GB", description: "Novo iPhone 6S Plus 64GB de armazenamento. Cor: Prata.", price: 4299, imageUrl: "http://www.promoinfo.com.br/img/anuncios/107479.jpg"))
+        
         
         return result
+    }
+    
+    class func refresh(products : Array<Product>) {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            for product in products {
+                realm.add(product, update: true)
+                
+                NSLog("Atualizando prduto \(product).")
+            }
+        })
+    }
+    
+    class func fetchById(productId: Int) -> Product {
+        let realm = try! Realm()
+        
+        if let product = realm.objects(Product).filter("id = \(productId)").first {
+            return product
+        }
+        else {
+            return Product()
+        }
     }
 }

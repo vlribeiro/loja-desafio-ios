@@ -15,17 +15,11 @@ class TransactionBusiness {
         self.delegate = delegate
     }
     
-    func fetch() {
-        var transaction = TransactionData.fetchActive()
-        
-        if (transaction == nil) {
-            transaction = Transaction()
-        }
-        
-        delegate.didFinishFetch(transaction!)
+    class func fetch() -> Transaction {
+        return TransactionData.fetchActive()
     }
 }
 
 protocol TransactionBusinessProtocol {
-    func didFinishFetch(transaction: Transaction)
+    //will be used for post
 }

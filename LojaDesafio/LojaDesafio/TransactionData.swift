@@ -11,17 +11,30 @@ import RealmSwift
 
 class TransactionData {
     
-    class func insertOrUpdate(transaction: Transaction) {
+    class func insertOrUpdate(transaction: Transaction) -> Transaction {
         let realm = try! Realm()
         
         try! realm.write({
             realm.add(transaction, update: true)
         })
+        
+        return transaction
     }
     
-    class func fetchActive() -> Transaction? {
+    class func fetchActive() -> Transaction {
         let realm = try! Realm()
         
-        return realm.objects(Transaction).first
+        if let transaction = realm.objects(Transaction).first {
+            return transaction
+        }
+        else {
+            let transaction = Transaction()
+            
+            try! realm.write({
+                realm.add(transaction, update: true)
+            })
+            
+            return transaction
+        }
     }
 }

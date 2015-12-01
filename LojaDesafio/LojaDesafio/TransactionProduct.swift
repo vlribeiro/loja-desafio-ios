@@ -47,4 +47,8 @@ class TransactionProduct : Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    override var description : String {
+        return "Produto em Transação -> { quantidade: \(self.quantity), produto: \(self.productId) }"
+    }
 }

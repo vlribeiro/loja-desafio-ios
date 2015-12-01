@@ -15,7 +15,7 @@ class Transaction : Object {
     dynamic var value : Float
     let transactionProducts : List<TransactionProduct>
     
-    init(id : Int, creditCard : CreditCard, creditCardId : Int, value : Float, transactionProducts : List<TransactionProduct>) {
+    init(id : Int, creditCard : CreditCard, value : Float, transactionProducts : List<TransactionProduct>) {
         self.id = id
         self.creditCard = creditCard
         self.value = value
@@ -52,5 +52,9 @@ class Transaction : Object {
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    override var description : String {
+        return "Transação -> { id: \(self.id), produtos: \(self.transactionProducts) }"
     }
 }

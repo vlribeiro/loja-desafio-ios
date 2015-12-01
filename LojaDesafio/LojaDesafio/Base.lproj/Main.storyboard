@@ -54,45 +54,45 @@
         <scene sceneID="27t-9z-dt0">
             <objects>
                 <tableViewController id="hMm-gQ-7jM" customClass="CartTableViewController" customModule="LojaDesafio" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="prR-l2-pUY" userLabel="Cart Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" id="prR-l2-pUY" userLabel="Cart Table View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="90" id="k40-Mb-6C0" customClass="CartTableViewCell" customModule="LojaDesafio" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="109" id="k40-Mb-6C0" customClass="CartTableViewCell" customModule="LojaDesafio" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k40-Mb-6C0" id="Rrk-V0-cZ2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="108.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-Tr-Y8U">
-                                            <rect key="frame" x="8" y="8" width="584" height="73.5"/>
+                                            <rect key="frame" x="8" y="28" width="584" height="72.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ud6-TS-IdT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="73.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="72.5" height="72.5"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ud6-TS-IdT" secondAttribute="height" multiplier="1:1" id="unV-TJ-MjA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Produto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz6-Qy-gon">
-                                                    <rect key="frame" x="89" y="0.0" width="54.5" height="18"/>
+                                                    <rect key="frame" x="88" y="0.0" width="54.5" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMZ-zB-y0Q">
-                                                    <rect key="frame" x="89" y="55.5" width="40" height="18"/>
+                                                    <rect key="frame" x="88" y="54.5" width="40" height="18"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-Gh-eEU">
-                                                    <rect key="frame" x="523" y="22" width="61" height="30"/>
+                                                    <rect key="frame" x="523" y="21.5" width="61" height="30"/>
                                                     <animations/>
                                                     <state key="normal" title="Remover"/>
                                                 </button>
@@ -114,7 +114,7 @@
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="XJQ-Tr-Y8U" firstAttribute="leading" secondItem="Rrk-V0-cZ2" secondAttribute="leadingMargin" id="BHo-rp-yRn"/>
-                                        <constraint firstItem="XJQ-Tr-Y8U" firstAttribute="top" secondItem="Rrk-V0-cZ2" secondAttribute="topMargin" id="LcM-Q8-AWg"/>
+                                        <constraint firstItem="XJQ-Tr-Y8U" firstAttribute="top" secondItem="Rrk-V0-cZ2" secondAttribute="topMargin" constant="20" id="LcM-Q8-AWg"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="XJQ-Tr-Y8U" secondAttribute="bottom" id="WdY-wa-vlX"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="CNY-Gh-eEU" secondAttribute="trailing" id="lmZ-9b-KiS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="XJQ-Tr-Y8U" secondAttribute="trailing" id="wiT-MJ-QwB"/>

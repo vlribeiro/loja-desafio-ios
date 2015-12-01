@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class TransactionProduct : Object {
     dynamic var id : Int
@@ -31,6 +32,15 @@ class TransactionProduct : Object {
         self.quantity = 0
         
         super.init()
+    }
+    
+    override init(realm: RLMRealm, schema: RLMObjectSchema) {
+        self.id = 0
+        self.transactionId = 0
+        self.productId = 0
+        self.quantity = 0
+        
+        super.init(realm: realm, schema: schema)
     }
     
     func getDictionaryData() -> Dictionary<String,Any> {

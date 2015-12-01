@@ -22,11 +22,34 @@ class TransactionProductData {
         return transactionProduct
     }
     
+    class func increaseQuantity(transactionProduct: TransactionProduct, by amount: Int) {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            transactionProduct.quantity += amount
+            
+            realm.add(transactionProduct, update: true)
+        })
+        
+        NSLog("Atualizando \(transactionProduct) na transação")
+    }
+    
     class func transactionProductForProduct(product: Product) -> TransactionProduct? {
         let realm = try! Realm()
         
         NSLog("Consulta por \(product) na transação")
         
         return realm.objects(TransactionProduct).filter("productId = \(product.id)").first
+    }
+    
+    class func nextId() -> Int {
+        let realm = try! Realm()
+        
+        if let lastInserted = realm.objects(TransactionProduct).sorted("id", ascending: false).first {
+            return lastInserted.id + 1
+        }
+        else {
+            return 1
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class Product : Object {
     dynamic var id : Int
@@ -34,6 +35,16 @@ class Product : Object {
         self.imageUrl = imageUrl
         
         super.init()
+    }
+    
+    override init(realm: RLMRealm, schema: RLMObjectSchema) {
+        self.id = 0
+        self.name = String()
+        self.productDescription = String()
+        self.price = 0
+        self.imageUrl = String()
+        
+        super.init(realm: realm, schema: schema)
     }
     
     override static func primaryKey() -> String? {

@@ -29,6 +29,7 @@ class TransactionData {
         }
         else {
             let transaction = Transaction()
+            transaction.id = 1
             
             try! realm.write({
                 realm.add(transaction, update: true)
@@ -36,5 +37,17 @@ class TransactionData {
             
             return transaction
         }
+    }
+    
+    class func addTransactionProduct(transactionProduct: TransactionProduct, toTransaction transaction: Transaction) {
+        let realm = try! Realm()
+        
+        try! realm.write({
+            transaction.transactionProducts.append(transactionProduct)
+            
+            realm.add(transaction, update: true)
+        })
+        
+        NSLog("Adicionando \(transactionProduct) na transação")
     }
 }

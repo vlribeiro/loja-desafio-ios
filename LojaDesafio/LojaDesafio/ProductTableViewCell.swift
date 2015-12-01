@@ -24,7 +24,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     @IBAction func addToCart(sender: UIButton) {        
-        TransactionProductBusiness.addProduct(self.product!)
+        TransactionBusiness.addProduct(self.product!)
     }
     
     func setProduct(product: Product, index: Int, delegate: ProductListTableCellProtocol) {
